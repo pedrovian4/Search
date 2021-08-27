@@ -27,12 +27,6 @@ public:
         string id, mandante_placar, visitante_placar, estado_vencedor;
         string rodada,horario,dia,mandante,visitante,data,vencedor, arena, estado_mandante, estado_visitante;
 
-
-
-    //VARIÁVEL DE CONTROLE 
-    int i=0;
-
-
     //VARIÁVEL DE LIMPEZA DE TELA 
     void clear_(){
         
@@ -187,27 +181,16 @@ int main()
     setlocale(LC_ALL, "portuguese");
 
     Linear_Search ls; 
-
-
-    while (ls.i!=2)
-    {
+ 
+ 
         cout<<"\n========== PESQUISA LINEAR =========\n";
         cout<<"\n\tDigite o time para pesquisar:\n";
         //PEGAR STRING COM ESPAÇO
         getline(cin, ls.team_usr);
         ls.Search(ls.team_usr);
         cout<<"\n\t1-Nova pesquisa\t"<<"\t2-Fechar\t\n";
-        cin>>ls.i;
-        if(ls.i==1){
-            ls.clear_();
-            //REABERTURA DE ARQUIVO 
-            ls.open();          
-        }
-         //FEACHAMENTO DE ARQUIVO    
-        else 
-            ls.myfile.close();
-    
-     }
+        ls.myfile.close();
+   
     cout<<"\n\nQuantidade de jogos: "<<ls.jogos<<endl;
  
     return 0;
